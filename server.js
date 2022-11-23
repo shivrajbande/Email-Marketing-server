@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -15,7 +16,7 @@ app.get("/", (req, res) => {
     // console.log(req);
   res.sendFile(__dirname+"/images/nslhub.jpg");
 });
-const port =  3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
