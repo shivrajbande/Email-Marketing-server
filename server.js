@@ -10,6 +10,9 @@ app.use(
     extended: true,
   })
 );
+app.post("/",(req,res)=>{
+  console.log("shivraj");
+})
 app.get("/", (req, res) => {
      var datetime = new Date();
      console.log(datetime);
