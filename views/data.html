@@ -1,0 +1,33 @@
+<html>
+<head>
+</head>
+<body>
+    <img src="https://emailauth12.herokuapp.com/" alt="yughb" id = "img">
+    
+    <div>
+    <h3>The Following data is successfuly posted</h3>
+    <h4 id="title"></h4>
+    <h5 id="bd"></h5>
+    </div>
+</body>
+<script>
+
+ fetch('https://emailauth12.herokuapp.com/isOpened', {
+  method: 'POST',
+  body: JSON.stringify({
+    email:"test@gmail.com",
+    body:body,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  }
+  })
+  .then(function(response){ 
+  return response.json()})
+  .then(function(data)
+  {console.log(data)
+
+}).catch(error => console.error('Error:', error)); 
+
+</script>
+</html>

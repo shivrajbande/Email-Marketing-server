@@ -16,6 +16,11 @@ app.get("/", (req, res) => {
     // console.log(req);
   res.sendFile(__dirname+"/images/nslhub.jpg");
 });
+app.post("/isOpened",(req,res)=>{
+  var email = req.email;
+  console.log(email);
+
+});
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
