@@ -31,7 +31,7 @@ app.get("/isOpened", (req, res) => {
   console.log("shivrajh");
   res.sendFile(__dirname + "/images/nslhub.jpg");
 });
-const port = 3000 || process.env.PORT;
+const port =  process.env.PORT;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
