@@ -5,26 +5,33 @@ const app = express();
 
 app.use(express.static("./public"));
 app.use(bodyParser.json());
+var cors = require("cors");
 app.use(
   bodyParser.urlencoded({
-    extended: true,
+    extended: false,
   })
 );
+app.use(cors());
 app.post("/",(req,res)=>{
   console.log("shivraj");
 })
-app.get("/", (req, res) => {
+app.get("/img", (req, res) => {
      var datetime = new Date();
-     console.log(datetime);
+    //  console.log(datetime);
     // console.log(req);
   res.sendFile(__dirname+"/images/nslhub.jpg");
 });
 app.post("/isOpened",(req,res)=>{
-  var email = req.email;
-  console.log(email);
 
+ console.log(req.body.email);
+  
+  res.send("asdfasdf");
 });
-const port = process.env.PORT || 3000;
+app.get("/isOpened", (req, res) => {
+  console.log("shivrajh");
+  res.sendFile(__dirname + "/images/nslhub.jpg");
+});
+const port = 3000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

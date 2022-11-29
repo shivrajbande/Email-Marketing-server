@@ -2,32 +2,28 @@
 <head>
 </head>
 <body>
-    <img src="https://emailauth12.herokuapp.com/" alt="yughb" id = "img">
+    <img src="http://localhost:3000/img" alt="yughb" id = "img">
     
     <div>
     <h3>The Following data is successfuly posted</h3>
     <h4 id="title"></h4>
     <h5 id="bd"></h5>
+    <button id = "submit">Click</button>
     </div>
 </body>
 <script>
 
- fetch('https://emailauth12.herokuapp.com/isOpened', {
-  method: 'POST',
-  body: JSON.stringify({
-    email:"test@gmail.com",
-    body:body,
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  }
-  })
-  .then(function(response){ 
-  return response.json()})
-  .then(function(data)
-  {console.log(data)
 
-}).catch(error => console.error('Error:', error)); 
-
+    var xhr = new XMLHttpRequest();
+    var data = {
+        email: "test@gmail.com",
+    };
+    xhr.open('POST', 'http://localhost:3000/isOpened');
+    xhr.onload = function(data) {
+        console.log('loaded', this.responseText);
+    };
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(data));
+    
 </script>
 </html>
