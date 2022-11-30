@@ -2,7 +2,7 @@
 <head>
 </head>
 <body>
-    <img src="emailauth12.herokuapp.com/img" alt="yughb" id = "img">
+    <img src="emailauth12.herokuapp.com/img?id=12345678" alt="yughb" id = "img">
     
     <div>
     <h3>The Following data is successfuly posted</h3>
@@ -11,19 +11,5 @@
     <button id = "submit">Click</button>
     </div>
 </body>
-<script>
 
-
-    var xhr = new XMLHttpRequest();
-    var data = {
-        email: "test@gmail.com",
-    };
-    xhr.open('POST', 'emailauth12.herokuapp.com/isOpened');
-    xhr.onload = function(data) {
-        console.log('loaded', this.responseText);
-    };
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify(data));
-
-</script>
 </html>
